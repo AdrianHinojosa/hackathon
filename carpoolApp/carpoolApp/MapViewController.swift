@@ -89,6 +89,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     
+    // MARK: - Firebase
+    
     // funcion que sube la coordenadas del usuario a la base de datos si es la primera vez
     func uploadUserCoordinates() {
         print("Uploading user coordinates...")

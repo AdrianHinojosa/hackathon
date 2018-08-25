@@ -78,13 +78,6 @@ class MatchesTableViewController: UITableViewController, CLLocationManagerDelega
         }
         tableView.reloadData()
         
-        if(matchLocations.count > 0) {
-            for location in matchLocations {
-                print(location.description)
-            }
-        } else {
-            print("Empty locations")
-        }
     }
 
     override func didReceiveMemoryWarning() {
