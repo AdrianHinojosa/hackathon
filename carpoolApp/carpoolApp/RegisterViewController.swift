@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var emailTF: UITextField!
+    
+    @IBOutlet weak var passTF: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +28,18 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func registerBT(_ sender: Any) {
+        Auth.auth().createUser(withEmail: emailTF.text!, password: passTF.text!) { (user, error) in
+            if error != nil{
+                print("error!")
+            }
+            else{
+                print("registration successful")
+                self.performSegue(withIdentifier: "goToSettings1", sender: self)
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -7,19 +7,40 @@
 //
 
 import UIKit
+import Firebase
 
 class LogInViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func logInBT(_ sender: Any) {
+        
+        Auth.auth().signIn(withEmail: emailTextField.text!, password: passTextField.text!) { (user, error) in
+            
+            if error != nil {
+                print(error!)
+                        
+            } else{
+                print ("Log in successful!")
+                self.performSegue(withIdentifier: "goToHome2", sender: self)
+            }
+        }
+    }
+    
+
     
 
     /*

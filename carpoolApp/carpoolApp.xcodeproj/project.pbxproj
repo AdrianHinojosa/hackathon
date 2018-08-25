@@ -18,6 +18,9 @@
 		8C5817D32131C40800E36741 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817D22131C40800E36741 /* MatchesTableViewController.swift */; };
 		8C5817D52131C84300E36741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C5817D42131C84300E36741 /* GoogleService-Info.plist */; };
 		8C5817D72131CA6B00E36741 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5817D62131CA6B00E36741 /* Default-568h@2x.png */; };
+		8C5817DB2131DD4600E36741 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817DA2131DD4600E36741 /* RegisterViewController.swift */; };
+		8CD4C9CB213207F0005BE9CE /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4C9CA213207F0005BE9CE /* DataViewController.swift */; };
+		8CD4C9CD21321755005BE9CE /* Persona.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD4C9CC21321755005BE9CE /* Persona.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +33,13 @@
 		8C5817BE2131B95800E36741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C5817C02131B95800E36741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C5817C82131BF0C00E36741 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		8C5817CB2131C05800E36741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/DataViewController.swift; sourceTree = "<group>"; };
 		8C5817CC2131C31900E36741 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		8C5817CF2131C35400E36741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/RegisterViewController.swift; sourceTree = "<group>"; };
 		8C5817D22131C40800E36741 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		8C5817D42131C84300E36741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C5817D62131CA6B00E36741 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		8C5817DA2131DD4600E36741 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8CD4C9CA213207F0005BE9CE /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		8CD4C9CC21321755005BE9CE /* Persona.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persona.swift; sourceTree = "<group>"; };
 		D756028BDCB19C965EEDEAD1 /* Pods-carpoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carpoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-carpoolApp/Pods-carpoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		E3F5D72A36E23EBE30521092 /* Pods_carpoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carpoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,10 +89,11 @@
 				8C5817B42131B95500E36741 /* AppDelegate.swift */,
 				8C5817B62131B95500E36741 /* WelcomeViewController.swift */,
 				8C5817C82131BF0C00E36741 /* MapViewController.swift */,
-				8C5817CA2131C05800E36741 /* DataViewController.swift */,
 				8C5817CC2131C31900E36741 /* LogInViewController.swift */,
-				8C5817CE2131C35400E36741 /* RegisterViewController.swift */,
 				8C5817D22131C40800E36741 /* MatchesTableViewController.swift */,
+				8CD4C9CA213207F0005BE9CE /* DataViewController.swift */,
+				8CD4C9CC21321755005BE9CE /* Persona.swift */,
+				8C5817DA2131DD4600E36741 /* RegisterViewController.swift */,
 				8C5817B82131B95500E36741 /* Main.storyboard */,
 				8C5817BB2131B95800E36741 /* Assets.xcassets */,
 				8C5817BD2131B95800E36741 /* LaunchScreen.storyboard */,
@@ -231,9 +236,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CD4C9CD21321755005BE9CE /* Persona.swift in Sources */,
 				8C5817CD2131C31900E36741 /* LogInViewController.swift in Sources */,
+				8CD4C9CB213207F0005BE9CE /* DataViewController.swift in Sources */,
 				8C5817B72131B95500E36741 /* WelcomeViewController.swift in Sources */,
 				8C5817C92131BF0C00E36741 /* MapViewController.swift in Sources */,
+				8C5817DB2131DD4600E36741 /* RegisterViewController.swift in Sources */,
 				8C5817B52131B95500E36741 /* AppDelegate.swift in Sources */,
 				8C5817D32131C40800E36741 /* MatchesTableViewController.swift in Sources */,
 			);
@@ -256,22 +264,6 @@
 				8C5817BE2131B95800E36741 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		8C5817CA2131C05800E36741 /* DataViewController.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C5817CB2131C05800E36741 /* Base */,
-			);
-			name = DataViewController.swift;
-			sourceTree = "<group>";
-		};
-		8C5817CE2131C35400E36741 /* RegisterViewController.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C5817CF2131C35400E36741 /* Base */,
-			);
-			name = RegisterViewController.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

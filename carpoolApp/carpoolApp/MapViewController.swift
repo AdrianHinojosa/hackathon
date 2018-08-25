@@ -7,9 +7,31 @@
 //
 
 import UIKit
+import Firebase
+
 
 class MapViewController: UIViewController {
 
+    @IBAction func logOutBT(_ sender: Any) {
+     
+        do{
+            try Auth.auth().signOut()
+            
+        }
+        catch{
+            print("Error signing out")
+        }
+        
+        guard (navigationController?.popToRootViewController(animated: true)) != nil
+            else{
+                print("No VC to pop off")
+                return
+        }
+        
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true);
