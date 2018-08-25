@@ -1,24 +1,32 @@
 //
-//  DataViewController.swift
+//  MatchInfoViewController.swift
 //  carpoolApp
 //
-//  Created by Corde Lopez on 8/25/18.
+//  Created by Fernando Carrillo on 8/25/18.
 //  Copyright © 2018 Corde Lopez. All rights reserved.
 //
 
 import UIKit
 
-class DataViewController: UIViewController, CLLocationManagerDelegate {
-
+class MatchInfoViewController: UIViewController {
+    // variables passed from past view controller
+    var location: LocationObj!
+    
+    // view variables
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated:true);
-        
-        // Permiso para utilizar ubicacion
-        locationManager.requestWhenInUseAuthorization()
-        
+        // loads the view with the data
+        loadData()
     }
 
+    
+    func loadData() {
+        descriptionLabel.text = location.description
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
