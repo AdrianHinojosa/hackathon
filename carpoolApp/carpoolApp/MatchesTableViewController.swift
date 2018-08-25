@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MatchesTableViewController: UITableViewController {
+class MatchesTableViewController: UITableViewController, CLLocationManagerDelegate {
 
+    // test variables
+    let testUserCoordinates = CLLocation(latitude: 25.649058688015778, longitude: -100.28982410127462)
+    let testCoordinates = CLLocation(latitude: 25.649058688015778, longitude: -100.28982410127462)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +23,16 @@ class MatchesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        getMatches()
+    }
+    
+    // MARK: - Distance
+    
+    func getMatches() {
+        let distanceInMeters = testUserCoordinates.distance(from: testUserCoordinates)
+        print("Distance: ", distanceInMeters)
     }
 
     override func didReceiveMemoryWarning() {

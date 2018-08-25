@@ -8,12 +8,15 @@
 
 import UIKit
 
-class DataViewController: UIViewController {
+class DataViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated:true);
-        // Do any additional setup after loading the view.
+        
+        // Permiso para utilizar ubicacion
+        locationManager.requestWhenInUseAuthorization()
+        
     }
 
     override func didReceiveMemoryWarning() {

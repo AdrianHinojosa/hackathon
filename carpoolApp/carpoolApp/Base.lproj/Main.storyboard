@@ -165,6 +165,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Carpool"/>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aRj-LF-vqE">
+                                <rect key="frame" x="0.0" y="106" width="375" height="489"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6FE-ag-el2"/>
@@ -172,10 +176,13 @@
                     <navigationItem key="navigationItem" title="Home" id="Tl3-sk-HJm">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="dAQ-2R-nAK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="aRj-LF-vqE" id="dpB-2o-its"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7am-s2-ql2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="134"/>
+            <point key="canvasLocation" x="2669.5999999999999" y="133.5832083958021"/>
         </scene>
         <!--Settings-->
         <scene sceneID="l3E-hM-0YJ">
@@ -203,7 +210,7 @@
         <!--Matches-->
         <scene sceneID="YZ5-Dq-GpZ">
             <objects>
-                <tableViewController id="xeY-eC-hiV" sceneMemberID="viewController">
+                <tableViewController id="xeY-eC-hiV" customClass="MatchesTableViewController" customModule="carpoolApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HAJ-GW-vMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
