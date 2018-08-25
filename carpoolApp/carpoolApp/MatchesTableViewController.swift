@@ -8,12 +8,24 @@
 
 import UIKit
 import CoreLocation
+import FirebaseDatabase
 
 class MatchesTableViewController: UITableViewController, CLLocationManagerDelegate {
 
+    // location and distance variables
+    let acceptedRadius: Double = 20047.722
+    var locations = [LocationObj]()
+    var matchLocations = [LocationObj]()
+    var selectedLocation: LocationObj!
+    
+    // firebase
+    var databaseRef: DatabaseReference!
+    
+    // table view
+    var selectedIndex = 0
+    
     // test variables
     let testUserCoordinates = CLLocation(latitude: 25.649058688015778, longitude: -100.28982410127462)
-    let testCoordinates = CLLocation(latitude: 25.649058688015778, longitude: -100.28982410127462)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +35,56 @@ class MatchesTableViewController: UITableViewController, CLLocationManagerDelega
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
+        // connects to database and retrieves data
+        getLocations()
         
+    }
+    
+    // MARK: - Firebase
+    func getLocations() {
+        databaseRef = Database.database().reference().child("Locations")
+        databaseRef.observe(DataEventType.value) { (snapshot) in
+            var newLocations = [LocationObj]()
         
-        getMatches()
+            for snapshot in snapshot.children {
+                let newLocation = LocationObj(snapshot: snapshot as! DataSnapshot)
+                newLocations.append(newLocation)
+            }
+            self.locations = newLocations
+            
+            // gets matches
+            self.getMatches()
+        }
     }
     
     // MARK: - Distance
     
+    // gets the locations that are close to the user
     func getMatches() {
-        let distanceInMeters = testUserCoordinates.distance(from: testUserCoordinates)
-        print("Distance: ", distanceInMeters)
+        var distanceInKiloMeters = 0.0
+        var auxLocation: CLLocation!
+        // for loop to loop through all radius...
+        for location in locations {
+            auxLocation = CLLocation(latitude: location.lat, longitude: location.lon)
+            distanceInKiloMeters = testUserCoordinates.distance(from: auxLocation) / 1000
+            distanceInKiloMeters = Double(distanceInKiloMeters).roundTo(places: 3)
+            print("Distance: ", distanceInKiloMeters)
+
+            // agrega las ubicaciones que estan dentro del rango
+            if(distanceInKiloMeters <= acceptedRadius) {
+                matchLocations.append(location)
+            }
+        }
+        tableView.reloadData()
+        
+        if(matchLocations.count > 0) {
+            for location in matchLocations {
+                print(location.description)
+            }
+        } else {
+            print("Empty locations")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,27 +92,29 @@ class MatchesTableViewController: UITableViewController, CLLocationManagerDelega
         // Dispose of any resources that can be recreated.
     }
 
+    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    // number of rows
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return matchLocations.count
     }
 
-    /*
+    // name at row
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = matchLocations[indexPath.row].name
 
         return cell
     }
-    */
+    
+    // index tapped by the user
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        selectedLocation = matchLocations[selectedIndex]
+        performSegue(withIdentifier: "toMatchInfo", sender: self)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,14 +151,24 @@ class MatchesTableViewController: UITableViewController, CLLocationManagerDelega
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "toMatchInfo") {
+            let matchInfoVC = segue.destination as! MatchInfoViewController
+            matchInfoVC.location = selectedLocation
+        }
     }
-    */
+ 
 
+}
+
+// redondea las decimales de un double
+extension Double {
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }

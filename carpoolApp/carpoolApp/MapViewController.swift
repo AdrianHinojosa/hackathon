@@ -9,11 +9,19 @@
 import UIKit
 import MapKit
 import CoreLocation
+import FirebaseDatabase
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     // map view variables
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
+    
+    // location
+    var latitude: CLLocationDegrees!
+    var longitude: CLLocationDegrees!
+    
+    // firebase
+    var dbReference: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +58,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     print("User coordinates: ", sourceCoor)
                     
                     // view del mapa
-                    let latitude: CLLocationDegrees = (sourceCoor.latitude)
-                    let longitude: CLLocationDegrees = (sourceCoor.longitude)
+                    latitude = (sourceCoor.latitude)
+                    longitude = (sourceCoor.longitude)
                     // tamano de la ventana
                     let lanDelta: CLLocationDegrees = 0.05
                     let lonDelta: CLLocationDegrees = 0.05
@@ -61,6 +69,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                     mapView.setRegion(region, animated: true)
                     
                     mapView.showsUserLocation = true
+                    //uploadUserCoordinates()
+                    
                 }
                 
                 break
@@ -82,6 +92,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     // funcion que sube la coordenadas del usuario a la base de datos si es la primera vez
     func uploadUserCoordinates() {
         print("Uploading user coordinates...")
+        dbReference = Database.database().reference().child("Locations")
+        
+        // sube el objeto con su informacion, hace una key automatica
+        let key = dbReference.childByAutoId().key
+        let location = ["latitude": String(latitude), "longitude": String(longitude), "description": "test"]
+        let childUpdates = ["/\(key)": location]
+        dbReference.updateChildValues(childUpdates)
     }
 
     

@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>547729050389-r5q03ls3rqgbola276u3o4rsr1kkrlpg.apps.googleusercontent.com</string>
+	<string>547729050389-qimc0ea83clunmj90ijn0oo0p86n7cbo.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.547729050389-r5q03ls3rqgbola276u3o4rsr1kkrlpg</string>
+	<string>com.googleusercontent.apps.547729050389-qimc0ea83clunmj90ijn0oo0p86n7cbo</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDZAU_n2RZrGNo9Zca2Mr8lQ_O71wRMTsQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.cordelopez.carpoolApp</string>
+	<string>com.fernando.carpoolApp</string>
 	<key>PROJECT_ID</key>
 	<string>carpoolapp-f1db6</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:547729050389:ios:40feae586b38ef04</string>
+	<string>1:547729050389:ios:cb3f832d4f08da10</string>
 	<key>DATABASE_URL</key>
 	<string>https://carpoolapp-f1db6.firebaseio.com</string>
 </dict>
