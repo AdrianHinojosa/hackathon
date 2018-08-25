@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07A172152131F5FB00EB7CEF /* MatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A172142131F5FB00EB7CEF /* MatchInfoViewController.swift */; };
+		07A17219213200EE00EB7CEF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07A17218213200ED00EB7CEF /* GoogleService-Info.plist */; };
+		07E905512131EB1500F5E863 /* LocationObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E905502131EB1500F5E863 /* LocationObj.swift */; };
 		7D7C249AFF99A283AAC12A8C /* Pods_carpoolApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3F5D72A36E23EBE30521092 /* Pods_carpoolApp.framework */; };
 		8C5817B52131B95500E36741 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817B42131B95500E36741 /* AppDelegate.swift */; };
 		8C5817B72131B95500E36741 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817B62131B95500E36741 /* WelcomeViewController.swift */; };
@@ -16,11 +19,13 @@
 		8C5817C92131BF0C00E36741 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817C82131BF0C00E36741 /* MapViewController.swift */; };
 		8C5817CD2131C31900E36741 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817CC2131C31900E36741 /* LogInViewController.swift */; };
 		8C5817D32131C40800E36741 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5817D22131C40800E36741 /* MatchesTableViewController.swift */; };
-		8C5817D52131C84300E36741 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C5817D42131C84300E36741 /* GoogleService-Info.plist */; };
 		8C5817D72131CA6B00E36741 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5817D62131CA6B00E36741 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07A172142131F5FB00EB7CEF /* MatchInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoViewController.swift; sourceTree = "<group>"; };
+		07A17218213200ED00EB7CEF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07E905502131EB1500F5E863 /* LocationObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationObj.swift; sourceTree = "<group>"; };
 		66BD53291AE12672E0CE4EA2 /* Pods-carpoolApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carpoolApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-carpoolApp/Pods-carpoolApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8C5817B12131B95500E36741 /* carpoolApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carpoolApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C5817B42131B95500E36741 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,7 +39,6 @@
 		8C5817CC2131C31900E36741 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		8C5817CF2131C35400E36741 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/RegisterViewController.swift; sourceTree = "<group>"; };
 		8C5817D22131C40800E36741 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
-		8C5817D42131C84300E36741 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C5817D62131CA6B00E36741 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D756028BDCB19C965EEDEAD1 /* Pods-carpoolApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carpoolApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-carpoolApp/Pods-carpoolApp.release.xcconfig"; sourceTree = "<group>"; };
 		E3F5D72A36E23EBE30521092 /* Pods_carpoolApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carpoolApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07A172132131EE8C00EB7CEF /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				07E905502131EB1500F5E863 /* LocationObj.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
 		7CAC4AFB54A28CE7F154D2A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,16 +96,18 @@
 			children = (
 				8C5817B42131B95500E36741 /* AppDelegate.swift */,
 				8C5817B62131B95500E36741 /* WelcomeViewController.swift */,
-				8C5817C82131BF0C00E36741 /* MapViewController.swift */,
 				8C5817CA2131C05800E36741 /* DataViewController.swift */,
 				8C5817CC2131C31900E36741 /* LogInViewController.swift */,
 				8C5817CE2131C35400E36741 /* RegisterViewController.swift */,
+				8C5817C82131BF0C00E36741 /* MapViewController.swift */,
 				8C5817D22131C40800E36741 /* MatchesTableViewController.swift */,
+				07A172142131F5FB00EB7CEF /* MatchInfoViewController.swift */,
+				07A172132131EE8C00EB7CEF /* Objects */,
 				8C5817B82131B95500E36741 /* Main.storyboard */,
 				8C5817BB2131B95800E36741 /* Assets.xcassets */,
 				8C5817BD2131B95800E36741 /* LaunchScreen.storyboard */,
 				8C5817C02131B95800E36741 /* Info.plist */,
-				8C5817D42131C84300E36741 /* GoogleService-Info.plist */,
+				07A17218213200ED00EB7CEF /* GoogleService-Info.plist */,
 			);
 			path = carpoolApp;
 			sourceTree = "<group>";
@@ -168,8 +182,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C5817BF2131B95800E36741 /* LaunchScreen.storyboard in Resources */,
-				8C5817D52131C84300E36741 /* GoogleService-Info.plist in Resources */,
 				8C5817BC2131B95800E36741 /* Assets.xcassets in Resources */,
+				07A17219213200EE00EB7CEF /* GoogleService-Info.plist in Resources */,
 				8C5817D72131CA6B00E36741 /* Default-568h@2x.png in Resources */,
 				8C5817BA2131B95500E36741 /* Main.storyboard in Resources */,
 			);
@@ -232,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C5817CD2131C31900E36741 /* LogInViewController.swift in Sources */,
+				07E905512131EB1500F5E863 /* LocationObj.swift in Sources */,
 				8C5817B72131B95500E36741 /* WelcomeViewController.swift in Sources */,
+				07A172152131F5FB00EB7CEF /* MatchInfoViewController.swift in Sources */,
 				8C5817C92131BF0C00E36741 /* MapViewController.swift in Sources */,
 				8C5817B52131B95500E36741 /* AppDelegate.swift in Sources */,
 				8C5817D32131C40800E36741 /* MatchesTableViewController.swift in Sources */,
@@ -397,12 +413,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7CAKG9848;
 				INFOPLIST_FILE = carpoolApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cordelopez.carpoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fernando.carpoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -415,12 +433,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M7CAKG9848;
 				INFOPLIST_FILE = carpoolApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cordelopez.carpoolApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fernando.carpoolApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
